@@ -1,0 +1,15 @@
+# Services d'appui pour CloudPilot : Neo4j (graphe), OPA (garde-fous), Ollama (LLM, optionnel)
+services:
+  neo4j:
+    image: neo4j:5.24-community
+    ports: ["7474:7474", "7687:7687"]
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-cloudpilot-demo}
+    volumes: [neo4j-data:/data]
+  opa:
+    image: openpolicyagent/opa:0.68.0
+    command: ["run", "--server", "--addr", "0.0.0.0:8181", "/policies/cloudpilot.rego"]
+    ports: ["8181:8181"]
+    volumes: ["./policies:/policies:ro"]
+volumes:
+  neo4j-data:

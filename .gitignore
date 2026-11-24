@@ -1,0 +1,11 @@
+work/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.terraform/
+*.tfstate*
+tools/opa
+tools/opa.exe
+.env

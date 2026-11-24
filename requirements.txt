@@ -1,0 +1,8 @@
+langgraph>=1.0,<2
+langgraph-checkpoint-sqlite>=3.0
+neo4j>=5.20
+networkx>=3.2
+requests>=2.31
+streamlit>=1.50
+pandas>=2.0
+pytest>=8.0
